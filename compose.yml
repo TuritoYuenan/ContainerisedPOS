@@ -1,0 +1,36 @@
+name: containerised-pos
+
+services:
+  postgres:
+    image: postgres:alpine
+    container_name: postgres
+    restart: on-failure:5
+    environment:
+      POSTGRES_USER: kong
+      POSTGRES_DB: kong
+      POSTGRES_PASSWORD: kongpass
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    restart: on-failure:5
+    depends_on:
+      - postgres
+
+  kong:
+    image: kong:3
+    container_name: kong
+    restart: on-failure:5
+    environment:
+      KONG_DATABASE: postgres
+      KONG_PG_HOST: postgres
+      KONG_PG_PASSWORD: kong
+      KONG_PG_USER: kong
+      KONG_REDIS_HOST: redis
+    depends_on:
+      - redis
+    ports:
+      - "8000:8000"
+      - "8443:8443"
+      - "8001:8001"
+      - "8444:8444"

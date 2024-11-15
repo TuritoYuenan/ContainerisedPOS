@@ -1,0 +1,115 @@
+<Window xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:vm="using:EmbeddedApplication.ViewModels"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="400"
+		x:Class="EmbeddedApplication.Views.MainWindow"
+		x:DataType="vm:MainWindowViewModel"
+		Icon="/Assets/avalonia-logo.ico"
+		Title="POS Terminal App">
+
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+			 to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+
+	<DockPanel LastChildFill="True">
+		<Border Name="Header" DockPanel.Dock="Top" Padding="16" Background="#0358AD">
+			<TextBlock FontSize="24" VerticalAlignment="Center" Foreground="White" Text="Manage Tables"/>
+		</Border>
+
+		<Border Name="Footer" DockPanel.Dock="Bottom" Padding="10">
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<Button>Settings</Button>
+				<Button>Help</Button>
+				<TextBlock>Containerised POS</TextBlock>
+			</StackPanel>
+		</Border>
+
+		<Border Name="Sidebar" DockPanel.Dock="Left" Padding="10">
+			<ListBox x:Name="links"></ListBox>
+		</Border>
+
+		<StackPanel Name="Ordering" DockPanel.Dock="Right" Margin="10" Spacing="10">
+			<Border Padding="10" BorderBrush="Gainsboro" BorderThickness="2" CornerRadius="10">
+				<TextBlock>Current Order</TextBlock>
+			</Border>
+			<Border Padding="10" BorderBrush="Gainsboro" BorderThickness="2" CornerRadius="10"></Border>
+		</StackPanel>
+
+		<TabControl Name="Main">
+			<TabItem Header="Tables">
+				<UniformGrid Rows="3" Columns="3">
+					<Border Background="Gainsboro" Margin="5">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+					</Border>
+					<Border Background="Gainsboro" Margin="5">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+					</Border>
+					<Border Background="Gainsboro" Margin="5">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+					</Border>
+					<Border Background="Gainsboro" Margin="5">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+					</Border>
+					<Border Background="Gainsboro" Margin="5">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+					</Border>
+					<Border Background="Gainsboro" Margin="5">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+					</Border>
+					<Border Background="Gainsboro" Margin="5">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+					</Border>
+					<Border Background="Gainsboro" Margin="5">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+					</Border>
+					<Border Background="Gainsboro" Margin="5">
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+					</Border>
+				</UniformGrid>
+			</TabItem>
+			<TabItem Header="Orders">
+				<StackPanel Spacing="10">
+					<StackPanel Orientation="Horizontal" Spacing="10">
+						<Button>Appetisers</Button>
+						<Button>Main Courses</Button>
+						<Button>Desserts</Button>
+						<Button>Drinks</Button>
+					</StackPanel>
+					<UniformGrid Rows="3" Columns="3">
+						<Border Background="Gainsboro" Margin="5">
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+						</Border>
+						<Border Background="Gainsboro" Margin="5">
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+						</Border>
+						<Border Background="Gainsboro" Margin="5">
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+						</Border>
+						<Border Background="Gainsboro" Margin="5">
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+						</Border>
+						<Border Background="Gainsboro" Margin="5">
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+						</Border>
+						<Border Background="Gainsboro" Margin="5">
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+						</Border>
+						<Border Background="Gainsboro" Margin="5">
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+						</Border>
+						<Border Background="Gainsboro" Margin="5">
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+						</Border>
+						<Border Background="Gainsboro" Margin="5">
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sample</TextBlock>
+						</Border>
+					</UniformGrid>
+				</StackPanel>
+			</TabItem>
+		</TabControl>
+	</DockPanel>
+</Window>
