@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import {
-	BarChart3,
 	Box,
 	DollarSign,
 	Users,
@@ -17,7 +16,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent } from "@/components/ui/tabs"
 import {
 	Table,
 	TableBody,

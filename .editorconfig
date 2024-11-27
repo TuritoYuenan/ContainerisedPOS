@@ -2,12 +2,12 @@ root = true
 
 # All files
 [*]
+tab_width = 4
+indent_size = 4
 indent_style = tab
 
 [*.yml]
 indent_size = 2
-
-[*.yml]
 indent_style = space
 
 # C# files
